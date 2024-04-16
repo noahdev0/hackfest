@@ -10,7 +10,6 @@ export async function GET(
   if (data.error) {
     return NextResponse.json({ error: data.error }, { status: 404 });
   }
-  const attributes = data.attribute;
 
-  return NextResponse.json({ attributes });
+  return NextResponse.json(data);
 }
