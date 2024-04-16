@@ -93,10 +93,15 @@ const Blogs = (props: Props) => {
 
 interface BlogProps {
   title: string;
-  description: string;
-
-  id: string;
+  body?: string;
   photo: string;
+  description: string;
+  id: string;
+  category?: {
+    id : string;
+    name : string;
+    
+  };
 }
 
 const Blog = (props: BlogProps) => {
