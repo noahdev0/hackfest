@@ -1,3 +1,4 @@
+"use client";
 /** Add fonts into your Next.js project:
 
 import { Caudex } from 'next/font/google'
@@ -19,25 +20,57 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 import Blogs from "@/components/blogs";
 import { Button } from "@/components/ui/button";
-import React from "react";
+import React, { useEffect } from "react";
+import { remark } from "remark";
+import html from "remark-html";
 
 type Props = {
   params: { id: string };
 };
 
-const page = async (props: Props) => {
-  const res = await fetch(`/api/blog/${props.params.id}`);
-  const data = await res.json();
-  console.log(data);
+export default function Page(props: Props) {
+  const [data, setData] = React.useState<any>({});
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(`/api/blog/${props.params.id}`);
+        const data = await res.json();
+        setData(data.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <div className="grid min-h-screen bg-gray-50 place-items-center gap-4 px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-3xl space-y-4">
-        {/* TODO : MARKDOWN HERE */}
+        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+          {data.attributes?.title}
+        </h1>
+        <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+          {data.attributes?.description}
+          <br />
+          <span className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            {data.attributes?.createdAt}
+          </span>
+        </p>
+        <div className="flex justify-center">
+          <img
+            className="w-full h-96 object-cover rounded-lg"
+            src={data.attributes?.photo}
+            alt={data.attributes?.title}
+          />
+        </div>
         <div
-          className="markdown"
-          dangerouslySetInnerHTML={{ __html: data.attribute.body }}
-        ></div>
+          dangerouslySetInnerHTML={{
+            __html: remark()
+              .use(html)
+              .processSync(data.attributes?.body)
+              .toString(),
+          }}
+        />
         <div className="border-t border-b divide-y">
           <div className="flex justify-center py-4">
             <Button className="h-[3rem] px-8" variant="outline">
@@ -51,6 +84,4 @@ const page = async (props: Props) => {
       </div>
     </div>
   );
-};
-
-export default page;
+}
