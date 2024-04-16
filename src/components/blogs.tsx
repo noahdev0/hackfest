@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -5,6 +6,21 @@ import React from "react";
 type Props = {};
 
 const Blogs = (props: Props) => {
+  const [blogs, setBlogs] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(null);
+  React.useEffect(() => {
+    fetch("/api/blogs")
+      .then((res) => res.json())
+      .then((data) => {
+        setBlogs(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []);
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 space-y-8 md:px-6 lg:space-y-10">
@@ -23,90 +39,44 @@ const Blogs = (props: Props) => {
           </p>
         </div>
         <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
-          <Link
-            className="flex flex-col rounded-lg overflow-hidden border shadow-sm hover:shadow transition-transform hover:scale-105"
-            href="#"
-          >
-            <Image
-              alt="Cover image"
-              className="aspect-[16/9] object-cover object-center w-full"
-              height={280}
-              src="/placeholder.svg"
-              width={500}
+          {[
+            {
+              title: "The Next.js Blog",
+              description:
+                "Learn about the latest news, tips, and best practices from the team behind Next.js.",
+              id: "1",
+              photo: "https://source.unsplash.com/500x280/?blog",
+            },
+            {
+              title: "The Vercel Blog",
+              description:
+                "Stay up to date with the latest news, tips, and best practices from the team behind Vercel.",
+              id: "2",
+              photo: "https://source.unsplash.com/500x280/?blog",
+            },
+            {
+              title: "The Next.js Blog",
+              description:
+                "Learn about the latest news, tips, and best practices from the team behind Next.js.",
+              id: "3",
+              photo: "https://source.unsplash.com/500x280/?blog",
+            },
+            {
+              title: "The Vercel Blog",
+              description:
+                "Stay up to date with the latest news, tips, and best practices from the team behind Vercel.",
+              id: "4",
+              photo: "https://source.unsplash.com/500x280/?blog",
+            },
+          ].map((blog) => (
+            <Blog
+              key={blog.id}
+              title={blog.title}
+              description={blog.description}
+              id={blog.id}
+              photo={blog.photo}
             />
-            <div className="p-6">
-              <h3 className="text-xl font-bold leading-snug/none">
-                Introduction to Jamstack: The Complete Guide
-              </h3>
-              <p className="text-sm leading-snug/none text-gray-500 dark:text-gray-400">
-                Learn how to get started with the Jamstack and supercharge your
-                web development workflow.
-              </p>
-            </div>
-          </Link>
-          <Link
-            className="flex flex-col rounded-lg overflow-hidden border shadow-sm hover:shadow transition-transform hover:scale-105"
-            href="#"
-          >
-            <Image
-              alt="Cover image"
-              className="aspect-[16/9] object-cover object-center w-full"
-              height={280}
-              src="/placeholder.svg"
-              width={500}
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-bold leading-snug/none">
-                Serverless Functions: The Definitive Handbook
-              </h3>
-              <p className="text-sm leading-snug/none text-gray-500 dark:text-gray-400">
-                Dive into the world of serverless and discover how you can run
-                code without managing infrastructure.
-              </p>
-            </div>
-          </Link>
-          <Link
-            className="flex flex-col rounded-lg overflow-hidden border shadow-sm hover:shadow transition-transform hover:scale-105"
-            href="#"
-          >
-            <Image
-              alt="Cover image"
-              className="aspect-[16/9] object-cover object-center w-full"
-              height={280}
-              src="/placeholder.svg"
-              width={500}
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-bold leading-snug/none">
-                The Future of Web Development: Trends to Watch
-              </h3>
-              <p className="text-sm leading-snug/none text-gray-500 dark:text-gray-400">
-                Explore the latest trends and innovations shaping the future of
-                web development.
-              </p>
-            </div>
-          </Link>
-          <Link
-            className="flex flex-col rounded-lg overflow-hidden border shadow-sm hover:shadow transition-transform hover:scale-105"
-            href="#"
-          >
-            <Image
-              alt="Cover image"
-              className="aspect-[16/9] object-cover object-center w-full"
-              height={280}
-              src="/placeholder.svg"
-              width={500}
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-bold leading-snug/none">
-                The Power of Edge: How Edge Computing is Transforming the Web
-              </h3>
-              <p className="text-sm leading-snug/none text-gray-500 dark:text-gray-400">
-                Discover how edge computing is bringing new capabilities and
-                performance to the web.
-              </p>
-            </div>
-          </Link>
+          ))}
         </div>
         <div className="flex justify-center">
           <Link

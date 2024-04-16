@@ -4,6 +4,7 @@ import HeroSection from "./heroSection";
 
 const LandingPage: React.FC = () => {
   return (
+
     <Container>
       <HeroSection />
     </Container>
