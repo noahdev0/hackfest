@@ -8,8 +8,8 @@ export const navigation = [
   },
 
   {
-    titel: "posts",
-    link: "posts",
+    titel: "blog",
+    link: "blog",
     icon: <Newspaper className="h-4 w-4" />,
   },
   {
