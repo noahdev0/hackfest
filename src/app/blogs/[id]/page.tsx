@@ -46,17 +46,7 @@ const page = async (props: Props) => {
           </div>
         </div>
         <section className="space-y-4">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold">
-              The Joke Tax Chronicles: How a Kingdom Taxed Laughter
-            </h2>
-            <p>
-              Once upon a time, in a far-off land, there was a very lazy king
-              who spent all day lounging on his throne. One day, his advisors
-              came to him with a problem: the kingdom was running out of money.
-            </p>
-          </div>
-          <Blogs />
+          <Blogs blogsNumber={4} />
         </section>
       </div>
     </div>
