@@ -80,7 +80,7 @@ const Blogs = (props: Props) => {
         </div>
         <div className="flex justify-center">
           <Link
-            className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200  bg-white px-8 text-sm font-medium shadow-sm gap-2 transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-950 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
+            className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200  bg-white px-8 text-sm font-medium shadow-sm gap-2 transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800  dark:bg-gray-950 dark:hover:bg-gray-950 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
             href="#"
           >
             View all posts
@@ -93,10 +93,15 @@ const Blogs = (props: Props) => {
 
 interface BlogProps {
   title: string;
-  description: string;
-
-  id: string;
+  body?: string;
   photo: string;
+  description: string;
+  id: string;
+  category?: {
+    id : string;
+    name : string;
+
+  };
 }
 
 const Blog = (props: BlogProps) => {
