@@ -6,11 +6,11 @@ import React from "react";
 type Props = {};
 
 const Blogs = (props: Props) => {
-  const [blogs, setBlogs] = React.useState([]);
+  const [blogs, setBlogs] = React.useState<BlogProps[]>([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
   React.useEffect(() => {
-    fetch("/api/blogs")
+    fetch("/api/posts")
       .then((res) => res.json())
       .then((data) => {
         setBlogs(data);
@@ -39,36 +39,7 @@ const Blogs = (props: Props) => {
           </p>
         </div>
         <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
-          {[
-            {
-              title: "The Next.js Blog",
-              description:
-                "Learn about the latest news, tips, and best practices from the team behind Next.js.",
-              id: "1",
-              photo: "https://source.unsplash.com/500x280/?blog",
-            },
-            {
-              title: "The Vercel Blog",
-              description:
-                "Stay up to date with the latest news, tips, and best practices from the team behind Vercel.",
-              id: "2",
-              photo: "https://source.unsplash.com/500x280/?blog",
-            },
-            {
-              title: "The Next.js Blog",
-              description:
-                "Learn about the latest news, tips, and best practices from the team behind Next.js.",
-              id: "3",
-              photo: "https://source.unsplash.com/500x280/?blog",
-            },
-            {
-              title: "The Vercel Blog",
-              description:
-                "Stay up to date with the latest news, tips, and best practices from the team behind Vercel.",
-              id: "4",
-              photo: "https://source.unsplash.com/500x280/?blog",
-            },
-          ].map((blog) => (
+          {blogs.map((blog) => (
             <Blog
               key={blog.id}
               title={blog.title}
@@ -98,9 +69,9 @@ interface BlogProps {
   description: string;
   id: string;
   category?: {
-    id : string;
-    name : string;
-
+    id: string;
+    name: string;
+    
   };
 }
 
