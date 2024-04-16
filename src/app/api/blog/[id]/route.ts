@@ -5,7 +5,9 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   const id = params.id;
-  const res = await fetch(`http://172.20.10.11:1337/api/posts/${id}`);
+  const res = await fetch(
+    `http://172.20.10.11:1337/api/posts/${id}?populate=*`
+  );
   const data = await res.json();
   if (data.error) {
     return NextResponse.json({ error: data.error }, { status: 404 });

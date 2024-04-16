@@ -46,16 +46,31 @@ export default function Page(props: Props) {
   return (
     <div className="grid min-h-screen bg-gray-50 place-items-center gap-4 px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-3xl space-y-4">
-        <div className="markdown">
-          <div
-            dangerouslySetInnerHTML={{
-              __html: remark()
-                .use(html)
-                .processSync(data.attributes?.body)
-                .toString(),
-            }}
+        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+          {data.attributes?.title}
+        </h1>
+        <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+          {data.attributes?.description}
+          <br />
+          <span className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            {data.attributes?.createdAt}
+          </span>
+        </p>
+        <div className="flex justify-center">
+          <img
+            className="w-full h-96 object-cover rounded-lg"
+            src={data.attributes?.photo}
+            alt={data.attributes?.title}
           />
         </div>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: remark()
+              .use(html)
+              .processSync(data.attributes?.body)
+              .toString(),
+          }}
+        />
         <div className="border-t border-b divide-y">
           <div className="flex justify-center py-4">
             <Button className="h-[3rem] px-8" variant="outline">
