@@ -1,7 +1,81 @@
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import React from "react";
 
-const HeroSection: React.FC = () => {
-  return <section> HeroSection</section>;
+const HeroSection = () => {
+  const { subTitle, title, desc } = {
+    subTitle: "About Us",
+    title: "We're on a mission to make coding accessible",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum duis laoreet maecenas. Feugiat",
+  };
+  return (
+    <>
+      <section className="overflow-hidden pb-12  lg:pb-[90px]   ">
+        <div className=" mx-auto">
+          <div className="flex flex-wrap-reverse  items-center justify-between -mx-4">
+            <div className="w-full px-4 lg:w-6/12">
+              <div className="flex items-center -mx-3 sm:-mx-4">
+                <div className="w-full px-3 sm:px-4 xl:w-1/2">
+                  <div className="py-3 sm:py-4">
+                    <Image
+                      src="https://images.unsplash.com/photo-1600195077077-7c815f540a3d?q=80&w=1978&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="happy coding"
+                      className="w-full rounded-2xl"
+                      width={500}
+                      height={500}
+                    />
+                  </div>
+                  <div className="py-3 sm:py-4">
+                    <Image
+                      src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="client happy with their Mvp"
+                      className="w-full rounded-2xl"
+                      width={500}
+                      height={500}
+                    />
+                  </div>
+                </div>
+                <div className="w-full px-3 sm:px-4 xl:w-1/2">
+                  <div className="relative z-10 my-4">
+                    <Image
+                      src="https://images.unsplash.com/photo-1627556704302-624286467c65?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="review coding with happy clients"
+                      className="w-full rounded-2xl"
+                      width={500}
+                      height={500}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full px-4 lg:w-1/2 xl:w-5/12 ">
+              <div className=" lg:mt-0 mb-12 lg:mb-0">
+                <span className="block mb-4  font-semibold text-primary dark:text-main">
+                  {subTitle}
+                </span>
+                <h2 className="mb-5 block w-full bg-gradient-to-b from-gray-800 to-gray-600 bg-clip-text font-bold text-transparent text-3xl sm:text-3xl ">
+                  {title}
+                </h2>
+                <p className="mb-5 text-base text-gray-400 text-body-color dark:text-dark-6">
+                  {desc}
+                </p>
+                {/* <p className="mb-8 text-base text-gray-400 text-body-color dark:text-dark-6">
+                  {descTwo}
+                </p> */}
+                <div className="lg:flex gap-4">
+                  <Button className="w-full">get latest news</Button>
+                  <Button variant="outline" className="w-full">
+                    about the faculty
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
 };
 
 export default HeroSection;

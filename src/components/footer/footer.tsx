@@ -3,7 +3,7 @@ import Container from "../container";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white dark:bg-gray-900">
+    <footer className="bg-white dark:bg-gray-900 border-t">
       <Container>
         <div className=" w-full  ">
           <div className="grid grid-cols-2 gap-8 py-6 lg:py-8 md:grid-cols-4">
