@@ -12,31 +12,9 @@ import {
 import { AlignJustify, Home, Info, ListChecks, Mail } from "lucide-react";
 
 import Link from "next/link";
+import { navigation } from "./navigation";
 
 export function MobileNav() {
-  const navigation = [
-    {
-      titel: "home",
-      link: "/",
-      icon: <Home className="h-4 w-4" />,
-    },
-    {
-      titel: "about",
-      link: "about-us",
-      icon: <Info className="h-4 w-4" />,
-    },
-    {
-      titel: "features",
-      link: "features",
-      icon: <ListChecks className="h-4 w-4" />,
-    },
-    {
-      titel: "feedback",
-      link: "contact",
-      icon: <Mail className="h-4 w-4" />,
-    },
-  ];
-
   return (
     <Sheet>
       <SheetTrigger className="lg:hidden" asChild>
