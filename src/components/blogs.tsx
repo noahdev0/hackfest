@@ -3,7 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-type Props = {};
+type Props = {
+  blogsNumber?: number;
+};
 
 const Blogs = (props: Props) => {
   const [blogs, setBlogs] = React.useState<BlogProps[]>([]);
@@ -39,7 +41,7 @@ const Blogs = (props: Props) => {
           </p>
         </div>
         <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
-          {blogs.map((blog) => (
+          {blogs.slice(0, props.blogsNumber || blogs.length).map((blog) => (
             <Blog
               key={blog.id}
               title={blog.title}
@@ -71,7 +73,6 @@ interface BlogProps {
   category?: {
     id: string;
     name: string;
-    
   };
 }
 
