@@ -98,9 +98,8 @@ interface BlogProps {
   description: string;
   id: string;
   category?: {
-    id : string;
-    name : string;
-
+    id: string;
+    name: string;
   };
 }
 
