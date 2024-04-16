@@ -1,7 +1,14 @@
-import Image from "next/image";
+import Container from "@/components/container";
+import React from "react";
+import HeroSection from "./heroSection";
 
-export default function Home() {
+const LandingPage: React.FC = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>
+
+    <Container>
+      <HeroSection />
+    </Container>
   );
-}
+};
+
+export default LandingPage;
