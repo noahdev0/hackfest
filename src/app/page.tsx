@@ -11,7 +11,7 @@ const LandingPage: React.FC = () => {
       <HeroSection />
       {/* <NewsSection /> */}
       <EventSection />
-      <Blogs />
+      <Blogs blogsNumber={6} />
     </Container>
   );
 };
