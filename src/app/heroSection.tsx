@@ -67,11 +67,17 @@ const HeroSection = () => {
             </div>
 
             <div className="w-full px-4 lg:w-1/2 xl:w-5/12 ">
+              <video
+                autoPlay
+                loop
+                className="w-full rounded-2xl bg-blend-darken"
+                src="/emu80860001-0096.mkv"
+              ></video>
               <div className=" lg:mt-0 mb-12 lg:mb-0">
                 <span className="block mb-4  font-semibold text-primary dark:text-main">
                   {subTitle}
                 </span>
-                <h2 className="mb-5 block w-full bg-gradient-to-b from-gray-800 to-gray-600 bg-clip-text font-bold text-transparent text-3xl sm:text-3xl ">
+                <h2 className="mb-5 block w-full bg-gradient-to-b from-gray-600 to-gray-300 bg-clip-text font-bold text-transparent text-3xl sm:text-3xl ">
                   {title}
                 </h2>
                 <p className="mb-5 text-base text-gray-400 text-body-color dark:text-dark-6">
