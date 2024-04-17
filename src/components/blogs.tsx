@@ -45,10 +45,10 @@ const Blogs = (props: Props) => {
           {blogs.slice(0, props.blogsNumber || blogs.length).map((blog) => (
             <Blog
               key={blog.id}
-              title={blog.title}
-              description={blog.description}
+              title={blog.attributes.title}
+              description={blog.attributes.description}
               id={blog.id}
-              photo={`http://172.20.10.11:1337/${blog.photo?.attributes.data.attributes.url}`}
+              photo={`http://172.20.10.11:1337${blog.attributes.photo?.data.attributes.url}`}
             />
           ))}
         </div>
@@ -66,10 +66,11 @@ const Blogs = (props: Props) => {
 };
 
 interface BlogProps {
-  title: string;
+  attributes?: any;
+  title: any;
   body?: string;
   photo: any;
-  description: string;
+  description: any;
   id: string;
   category?: {
     id: string;
@@ -78,6 +79,8 @@ interface BlogProps {
 }
 
 const Blog = (props: BlogProps) => {
+  console.log(props.photo);
+
   return (
     <Link
       className="flex flex-col rounded-lg overflow-hidden border shadow-sm hover:shadow transition-transform hover:scale-105"
@@ -92,7 +95,7 @@ const Blog = (props: BlogProps) => {
       />
       <div className="p-6">
         <h3 className="text-xl font-bold leading-snug/none">{props.title}</h3>
-        <p className="text-sm leading-snug/none text-gray-500 dark:text-gray-400">
+        <p className="text-sm leading-snug/none text-gray-500 dark:text-gray-400 line-clamp-2">
           {props.description}
         </p>
       </div>
