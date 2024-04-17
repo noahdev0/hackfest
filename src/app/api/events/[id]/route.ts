@@ -5,14 +5,12 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   const id = params.id;
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/events/${id}`
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/events/${id}?populate=*`
   );
   const data = await res.json();
   if (data.error) {
     return NextResponse.json({ error: data.error }, { status: 404 });
   }
-  const attributes = data.attribute;
 
-  return NextResponse.json({ attributes });
+  return NextResponse.json(data);
 }

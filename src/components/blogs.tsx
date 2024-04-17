@@ -82,8 +82,6 @@ interface BlogProps {
 }
 
 const Blog = (props: BlogProps) => {
-  console.log(props.photo);
-
   return (
     <Link
       className="flex flex-col rounded-lg overflow-hidden border shadow-sm hover:shadow transition-transform hover:scale-105"
