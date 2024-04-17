@@ -45,9 +45,9 @@ export default function Page(props: Props) {
     };
     fetchData();
   }, []);
-  console.log(data.attributes?.photo.data.attributes.url);
+  console.log(data);
   return (
-    <div className="grid min-h-screen bg-gray-50 place-items-center gap-4 px-4 sm:px-6 lg:px-8">
+    <div className="grid min-h-screen place-items-center gap-4 px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-3xl space-y-4">
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
           {data.attributes?.title}
@@ -60,14 +60,19 @@ export default function Page(props: Props) {
           </span>
         </p>
         <div className="flex justify-center">
-          <Image
-            className="w-full h-96 object-cover rounded-lg"
-            src={`http://172.20.10.5:1337${data.attributes?.photo.data.attributes.url}`}
-            alt={data.attributes?.title}
-            height={data.attributes?.photo?.data.attributes.height}
-            width={data.attributes?.photo?.data.attributes.width}
-            // attributes.photo.data.attributes.url
-          />
+          {data.attributes?.photo?.data?.attributes?.url && (
+            <Image
+              className="w-full h-96 object-cover rounded-lg"
+              src={
+                data.attributes?.photo.data.attributes.url &&
+                `http://172.20.10.5:1337${data.attributes?.photo.data.attributes.url}`
+              }
+              alt={data.attributes?.title}
+              height={data.attributes?.photo?.data.attributes.height}
+              width={data.attributes?.photo?.data.attributes.width}
+              // attributes.photo.data.attributes.url
+            />
+          )}
         </div>
         <div
           dangerouslySetInnerHTML={{
