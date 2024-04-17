@@ -37,40 +37,15 @@ const EventSection: React.FC = () => {
     getEvents();
   }, []);
 
-  const arrayCards = [
-    {
-      title: "brothers",
-      description:
-        "Learn about the latest news, tips, and best practices from the team behind Next.js.",
-      id: 1,
-      photo:
-        "https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      title: "The Next.js Blog",
-      description:
-        "Learn about the latest news, tips, and best practices from the team behind Next.js.",
-      id: 2,
-      photo:
-        "https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      title: "The Next.js Blog",
-      description:
-        "Learn about the latest news, tips, and best practices from the team behind Next.js.",
-      id: 3,
-      photo:
-        "https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      title: "The Next.js Blog",
-      description:
-        "Learn about the latest news, tips, and best practices from the team behind Next.js.",
-      id: 4,
-      photo:
-        "https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-  ];
+  const arrayCards = events.map((event: any) => {
+    return {
+      id: event.id,
+      title: event.attributes.name,
+      date: event.attributes.date,
+      // description: event.attributes.description,
+      photos: event.attributes.photos?.data.attributes.url,
+    };
+  });
 
   return (
     <section>
