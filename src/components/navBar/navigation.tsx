@@ -9,17 +9,17 @@ export const navigation = [
 
   {
     titel: "blog",
-    link: "blog",
+    link: "/blogs",
     icon: <Newspaper className="h-4 w-4" />,
   },
   {
     titel: "event",
-    link: "event",
+    link: "/events",
     icon: <CalendarRange className="h-4 w-4" />,
   },
   {
     titel: "about the faculty",
-    link: "about-the-faculty",
+    link: "/about-the-faculty",
     icon: <Info className="h-4 w-4" />,
   },
 ];
