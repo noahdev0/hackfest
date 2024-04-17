@@ -5,7 +5,8 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   const id = params.id;
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/events/${id}?populate=*`
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/events/${id}?populate=*`
   );
   const data = await res.json();
   if (data.error) {
