@@ -25,7 +25,7 @@ const Team: React.FC = () => {
     <section className="py-14">
       <div className="max-w-screen-xl mx-auto px-4 md:px-8">
         <div className="text-center">
-          <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl capitalize">
+          <h3 className="mb-5 block w-full bg-gradient-to-b from-black dark:from-white dark:to-black to-gray-500  bg-clip-text font-bold text-transparent text-3xl sm:text-3xl capitalize">
             Meet our professors
           </h3>
           <p className="text-gray-400 mt-3">

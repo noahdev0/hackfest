@@ -28,7 +28,7 @@ const Blogs = (props: Props) => {
       <div className="container px-4 space-y-8 md:px-6 lg:space-y-10">
         <div className="space-y-4 text-center">
           <div className="space-y-1">
-            <h2 className="mb-5 block w-full bg-gradient-to-b from-gray-800 to-gray-600 bg-clip-text font-bold text-transparent text-3xl sm:text-3xl">
+            <h2 className="mb-5 block w-full bg-gradient-to-b from-black dark:from-white dark:to-black to-gray-500  bg-clip-text font-bold text-transparent text-3xl sm:text-3xl">
               Thoughts on Jamstack, Serverless, and the Future of Web
             </h2>
           </div>

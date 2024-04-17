@@ -40,7 +40,7 @@ const EventSection: React.FC<Props> = (props) => {
 
     getEvents();
   }, []);
-
+  console.log(events);
   const arrayCards = events
     .slice(0, props.blogsNumber || events.length)
     .map((event: any) => {
@@ -50,9 +50,9 @@ const EventSection: React.FC<Props> = (props) => {
         date: event.attributes.date,
         description: event.attributes.description,
         photo:
-          event.attributes.photos?.data[0]?.attributes.url &&
+          event.attributes.photo?.data?.attributes.url &&
           process.env.NEXT_PUBLIC_BASE_URL +
-            event.attributes.photos?.data[0]?.attributes.url,
+            event.attributes.photo?.data?.attributes.url,
       };
     });
 
@@ -60,7 +60,7 @@ const EventSection: React.FC<Props> = (props) => {
     <section>
       <div className="flex flex-col lg:flex-row lg:justify-between">
         <div className=" mb-10 lg:mb-14">
-          <h2 className="mb-5 block w-full bg-gradient-to-b from-gray-800 to-gray-600 bg-clip-text font-bold text-transparent text-3xl sm:text-3xl">
+          <h2 className="mb-5 block w-full bg-gradient-to-b from-black dark:from-white dark:to-black to-gray-500  bg-clip-text font-bold text-transparent text-3xl sm:text-3xl">
             Read our latest events
           </h2>
           <p className="mt-1 text-gray-400 dark:text-neutral-400">

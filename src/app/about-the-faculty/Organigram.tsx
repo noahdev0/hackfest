@@ -5,7 +5,7 @@ const Organigram: React.FC = () => {
   return (
     <div>
       <div className=" mb-8 text-center">
-        <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl capitalize">
+        <h3 className="mb-5 block w-full bg-gradient-to-b from-black dark:from-white dark:to-black to-gray-500  bg-clip-text font-bold text-transparent text-3xl sm:text-3xl capitalize">
           Organigram of the faculty
         </h3>
         <p className="text-gray-400 mt-3">
