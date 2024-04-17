@@ -20,6 +20,7 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 import Blogs from "@/components/blogs";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import React, { useEffect } from "react";
 import { remark } from "remark";
 import html from "remark-html";
@@ -57,10 +58,12 @@ export default function Page(props: Props) {
           </span>
         </p>
         <div className="flex justify-center">
-          <img
+          <Image
             className="w-full h-96 object-cover rounded-lg"
-            src={data.attributes?.photo}
+            src={data.attributes?.photo.data.url}
             alt={data.attributes?.title}
+            height={data.attributes?.photo.data.height}
+            width={data.attributes?.photo.data.width}
           />
         </div>
         <div
