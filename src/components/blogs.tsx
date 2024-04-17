@@ -83,7 +83,7 @@ const Blog = (props: BlogProps) => {
   return (
     <Link
       className="flex flex-col rounded-lg overflow-hidden border shadow-sm hover:shadow transition-transform hover:scale-105"
-      href={`/blog/${props.id}`}
+      href={`/blogs/${props.id}`}
     >
       <Image
         alt="Cover image"
