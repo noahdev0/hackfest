@@ -13,8 +13,8 @@ export const navigation = [
     icon: <Newspaper className="h-4 w-4" />,
   },
   {
-    titel: "events",
-    link: "events",
+    titel: "event",
+    link: "event",
     icon: <CalendarRange className="h-4 w-4" />,
   },
   {
