@@ -43,7 +43,7 @@ export default function Page(props: Props) {
       }
     };
     fetchData();
-  }, []);
+  }, []);  
   return (
     <div className="grid min-h-screen bg-gray-50 place-items-center gap-4 px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-3xl space-y-4">
