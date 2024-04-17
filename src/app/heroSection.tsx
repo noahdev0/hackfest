@@ -8,7 +8,7 @@ const HeroSection = () => {
   const { subTitle, title, desc } = {
     subTitle: "About Us",
     title: "We're on a mission to make coding accessible",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum duis laoreet maecenas. Feugiat",
+    desc: "Explore innovation at University de Tlemcen's Computer Science Department. Stay updated with the latest advancements, research, and insights from our vibrant community. Welcome to a world where possibilities are endless.",
   };
   return (
     <>
