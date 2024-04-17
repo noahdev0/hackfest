@@ -1,6 +1,8 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const { subTitle, title, desc } = {
@@ -16,7 +18,12 @@ const HeroSection = () => {
             <div className="w-full px-4 lg:w-6/12">
               <div className="flex items-center -mx-3 sm:-mx-4">
                 <div className="w-full px-3 sm:px-4 xl:w-1/2">
-                  <div className="py-3 sm:py-4">
+                  <motion.div
+                    initial={{ opacity: 0, y: -40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 }}
+                    className="py-3 sm:py-4"
+                  >
                     <Image
                       src="https://images.unsplash.com/photo-1600195077077-7c815f540a3d?q=80&w=1978&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="happy coding"
@@ -24,8 +31,13 @@ const HeroSection = () => {
                       width={500}
                       height={500}
                     />
-                  </div>
-                  <div className="py-3 sm:py-4">
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="py-3 sm:py-4"
+                  >
                     <Image
                       src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="client happy with their Mvp"
@@ -33,9 +45,14 @@ const HeroSection = () => {
                       width={500}
                       height={500}
                     />
-                  </div>
+                  </motion.div>
                 </div>
-                <div className="w-full px-3 sm:px-4 xl:w-1/2">
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="w-full px-3 sm:px-4 xl:w-1/2"
+                >
                   <div className="relative z-10 my-4">
                     <Image
                       src="https://images.unsplash.com/photo-1627556704302-624286467c65?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -45,7 +62,7 @@ const HeroSection = () => {
                       height={500}
                     />
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
 
@@ -64,9 +81,9 @@ const HeroSection = () => {
                   {descTwo}
                 </p> */}
                 <div className="lg:flex gap-4">
-                  <Button className="w-full">get latest news</Button>
+                  <Button className="w-full">Get Latest News</Button>
                   <Button variant="outline" className="w-full">
-                    about the faculty
+                    About The Faculty
                   </Button>
                 </div>
               </div>
