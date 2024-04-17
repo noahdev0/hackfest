@@ -77,7 +77,7 @@ const HeroSection = () => {
                 <span className="block mb-4  font-semibold text-primary dark:text-main">
                   {subTitle}
                 </span>
-                <h2 className="mb-5 block w-full bg-gradient-to-b from-gray-600 to-gray-300 bg-clip-text font-bold text-transparent text-3xl sm:text-3xl ">
+                <h2 className="mb-5 block w-full bg-gradient-to-b from-black dark:from-white dark:to-black to-gray-500  bg-clip-text font-bold text-transparent text-3xl sm:text-3xl ">
                   {title}
                 </h2>
                 <p className="mb-5 text-base text-gray-400 text-body-color dark:text-dark-6">

@@ -26,16 +26,13 @@ const Blogs = (props: Props) => {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 space-y-8 md:px-6 lg:space-y-10">
-        <div className="space-y-4">
+        <div className="space-y-4 text-center">
           <div className="space-y-1">
-            <div className="inline-block rounded-lg bg-gray-900 px-3 py-1.5 text-sm">
-              Blog
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <h2 className="mb-5 block w-full bg-gradient-to-b from-black dark:from-white dark:to-black to-gray-500  bg-clip-text font-bold text-transparent text-3xl sm:text-3xl">
               Thoughts on Jamstack, Serverless, and the Future of Web
             </h2>
           </div>
-          <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+          <p className="text-gray-400 md:text-xl/relaxed lg:text-base/relaxed  dark:text-gray-400">
             Stay up to date with the latest news, tips, and best practices from
             the team behind the platform for frontend developers.
           </p>

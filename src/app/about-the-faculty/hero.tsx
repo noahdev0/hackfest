@@ -9,7 +9,7 @@ const HeroAbout: React.FC = () => {
     <div className=" sm:px-6 lg:px-8">
       <div className="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">
         <div className="lg:col-span-3">
-          <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl lg:text-6xl dark:text-white">
+          <h1 className="mb-5 block w-full bg-gradient-to-b from-black dark:from-white dark:to-black to-gray-500  bg-clip-text font-bold text-transparent text-3xl sm:text-3xl">
             Build Better Products
           </h1>
           <p className="mt-3 text-lg text-gray-400 dark:text-neutral-400">

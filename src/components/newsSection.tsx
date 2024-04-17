@@ -43,7 +43,7 @@ const NewsSection: React.FC = () => {
     <section>
       <div className="flex flex-col lg:flex-row lg:justify-between">
         <div className=" mb-10 lg:mb-14">
-          <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
+          <h2 className="mb-5 block w-full bg-gradient-to-b from-gray-800 to-gray-600 bg-clip-text font-bold text-transparent text-3xl sm:text-3xl">
             Read our latest news
           </h2>
           <p className="mt-1 text-gray-600 dark:text-neutral-400">
