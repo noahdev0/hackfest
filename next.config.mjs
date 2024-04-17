@@ -16,8 +16,8 @@ const nextConfig = {
       },
       {
         protocol: "http",
-        hostname: "",
-      }
+        hostname: process.env.BASE_URL,
+      },
     ],
   },
 };
