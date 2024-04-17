@@ -32,7 +32,7 @@ const Events: React.FC<Props> = (props) => {
     }
   }, [event]);
 
-  console.log(event);
+  console.log(event.photo?.data.attributes.url);
   return (
     <Container>
       <section className="bg-white dark:bg-gray-900 min-h-screen flex items-center  ">
@@ -57,14 +57,14 @@ const Events: React.FC<Props> = (props) => {
             </div>
           </div>
           <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-            {event?.photos && (
+            {event?.photo && (
               <Image
                 className="w-full rounded-lg"
                 width={500}
                 height={500}
                 src={
                   process.env.NEXT_PUBLIC_BASE_URL +
-                  event?.photos?.data[0].attributes.url
+                  event?.photo?.data.attributes.url
                 }
                 alt="mockup"
               />

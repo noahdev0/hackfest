@@ -6,7 +6,7 @@ interface Props {
   title: string;
   description?: string;
   id: number;
-  photo: string;
+  photo: any;
   date: string;
 }
 
@@ -20,13 +20,15 @@ const EventCard: React.FC<Props> = ({
   return (
     <Link className="group sm:flex rounded-xl" href={`/events/${id}`}>
       <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full h-[200px] sm:w-[250px] sm:h-[350px]">
-        <Image
-          width={400}
-          height={400}
-          className="size-full absolute top-0 start-0 object-cover"
-          src={photo}
-          alt="Image Description"
-        />
+        {photo && (
+          <Image
+            width={400}
+            height={400}
+            className="size-full absolute top-0 start-0 object-cover"
+            src={photo}
+            alt="Image Description"
+          />
+        )}
       </div>
       <div className="grow">
         <div className="p-4 flex flex-col h-full sm:p-6">

@@ -20,11 +20,12 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 import Blogs from "@/components/blogs";
 import { Button } from "@/components/ui/button";
+import { Metadata } from "next";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { remark } from "remark";
 import html from "remark-html";
- 
+
 type Props = {
   params: { id: string };
 };
@@ -43,7 +44,8 @@ export default function Page(props: Props) {
       }
     };
     fetchData();
-  }, []);  
+  }, []);
+  console.log(data.attributes?.photo.data.attributes.url);
   return (
     <div className="grid min-h-screen bg-gray-50 place-items-center gap-4 px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-3xl space-y-4">
@@ -60,10 +62,11 @@ export default function Page(props: Props) {
         <div className="flex justify-center">
           <Image
             className="w-full h-96 object-cover rounded-lg"
-            src={data.attributes?.photo.data.url}
+            src={`http://172.20.10.5:1337${data.attributes?.photo.data.attributes.url}`}
             alt={data.attributes?.title}
-            height={data.attributes?.photo.data.height}
-            width={data.attributes?.photo.data.width}
+            height={data.attributes?.photo?.data.attributes.height}
+            width={data.attributes?.photo?.data.attributes.width}
+            // attributes.photo.data.attributes.url
           />
         </div>
         <div
