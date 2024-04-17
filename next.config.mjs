@@ -16,7 +16,7 @@ const nextConfig = {
       },
       {
         protocol: "http",
-        hostname: "172.20.10.11",
+        hostname: process.env.BASE_URL,
       },
     ],
   },
