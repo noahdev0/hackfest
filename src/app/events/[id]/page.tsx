@@ -2,15 +2,13 @@
 import Container from "@/components/container";
 import { Calendar } from "@/components/ui/calendar";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type Props = {
   params: { id: string };
 };
 
 const Events: React.FC<Props> = (props) => {
-  const [date, setDate] = useState<Date | undefined>(new Date());
-
   const [event, setEvent] = React.useState<any>({});
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
@@ -26,6 +24,14 @@ const Events: React.FC<Props> = (props) => {
         setLoading(false);
       });
   }, []);
+  const [date, setDate] = useState<Date | undefined>(undefined);
+
+  useEffect(() => {
+    if (event.date) {
+      setDate(new Date(event.date));
+    }
+  }, [event]);
+
   console.log(event);
   return (
     <Container>
@@ -40,13 +46,14 @@ const Events: React.FC<Props> = (props) => {
               <p className="max-w-2xl mb-6 font-light text-gray-400 lg:mb-8  dark:text-gray-400">
                 {event.description}
               </p>
-              <Calendar
-                disabled
-                mode="single"
-                selected={new Date(event.date)}
-                onSelect={setDate}
-                className="rounded-md border"
-              />
+              {date && (
+                <Calendar
+                  disabled
+                  mode="single"
+                  selected={date}
+                  className="rounded-md border"
+                />
+              )}
             </div>
           </div>
           <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
