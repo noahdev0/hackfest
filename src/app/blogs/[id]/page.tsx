@@ -24,7 +24,7 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import { remark } from "remark";
 import html from "remark-html";
-
+ 
 type Props = {
   params: { id: string };
 };
