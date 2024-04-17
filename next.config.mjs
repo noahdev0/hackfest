@@ -14,6 +14,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "fs.univ-tlemcen.dz",
       },
+      {
+        protocol: "http",
+        hostname: "172.20.10.11",
+      },
     ],
   },
 };

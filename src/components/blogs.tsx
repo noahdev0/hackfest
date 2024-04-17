@@ -23,6 +23,7 @@ const Blogs = (props: Props) => {
         setLoading(false);
       });
   }, []);
+  console.log(blogs);
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 space-y-8 md:px-6 lg:space-y-10">
@@ -47,7 +48,7 @@ const Blogs = (props: Props) => {
               title={blog.title}
               description={blog.description}
               id={blog.id}
-              photo={blog.photo}
+              photo={`http://172.20.10.11:1337/${blog.photo?.attributes.data.attributes.url}`}
             />
           ))}
         </div>
@@ -67,7 +68,7 @@ const Blogs = (props: Props) => {
 interface BlogProps {
   title: string;
   body?: string;
-  photo: string;
+  photo: any;
   description: string;
   id: string;
   category?: {
