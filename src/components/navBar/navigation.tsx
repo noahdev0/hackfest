@@ -6,14 +6,15 @@ export const navigation = [
     link: "/",
     icon: <Home className="h-4 w-4" />,
   },
+
   {
-    titel: "blogs",
-    link: "features",
+    titel: "blog",
+    link: "blog",
     icon: <Newspaper className="h-4 w-4" />,
   },
   {
     titel: "events",
-    link: "contact",
+    link: "events",
     icon: <CalendarRange className="h-4 w-4" />,
   },
   {

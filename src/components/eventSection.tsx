@@ -1,9 +1,42 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import GridLayout from "./gridLayout";
 import EventCard from "./eventCard";
 
+interface eventsProps {
+  title: string;
+  photos: string;
+  description: string;
+  id: string;
+  category?: {
+    id: string;
+    name: string;
+  };
+}
+
 const EventSection: React.FC = () => {
+  const [events, setEvents] = React.useState<eventsProps[]>([]);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState<any>(null);
+
+  useEffect(() => {
+    const getEvents = async () => {
+      try {
+        const res = await fetch("/api/events");
+        const data = await res.json();
+        setEvents(data);
+        setLoading(false);
+        console.log(data);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    };
+
+    getEvents();
+  }, []);
+
   const arrayCards = [
     {
       title: "brothers",
