@@ -6,7 +6,7 @@ export async function GET(
 ) {
   const id = params.id;
   const res = await fetch(
-    `http://172.20.10.11:1337/api/posts/${id}?populate=*`
+    `${process.env.NEXT_PUBLIC_BASE_URL}api/posts/${id}?populate=*`
   );
   const data = await res.json();
   if (data.error) {

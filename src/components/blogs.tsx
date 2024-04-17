@@ -23,7 +23,6 @@ const Blogs = (props: Props) => {
         setLoading(false);
       });
   }, []);
-  console.log(blogs);
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 space-y-8 md:px-6 lg:space-y-10">
