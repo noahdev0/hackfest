@@ -6,7 +6,7 @@ export async function GET(
 ) {
   const id = params.id;
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}api/events/${id}`
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/events/${id}`
   );
   const data = await res.json();
   if (data.error) {

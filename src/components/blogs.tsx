@@ -47,7 +47,7 @@ const Blogs = (props: Props) => {
               title={blog.attributes.title}
               description={blog.attributes.description}
               id={blog.id}
-              photo={`http://172.20.10.11:1337${blog.attributes.photo?.data.attributes.url}`}
+              photo={`${process.env.NEXT_PUBLIC_BASE_URL}${blog.attributes.photo?.data.attributes.url}`}
             />
           ))}
         </div>
