@@ -4,7 +4,7 @@ import React from "react";
 
 interface Props {
   title: string;
-  // description: string;
+  description?: string;
   id: number;
   photo: string;
   date: string;
@@ -12,7 +12,7 @@ interface Props {
 
 const EventCard: React.FC<Props> = ({
   title,
-  // description,
+  description,
   id,
   photo,
   date,
@@ -40,8 +40,8 @@ const EventCard: React.FC<Props> = ({
           <h3 className="text-lg sm:text-2xl font-semibold text-gray-800 group-hover:text-blue-600 dark:text-neutral-300 dark:group-hover:text-white">
             {title}
           </h3>
-          <p className="mt-2 text-gray-400 dark:text-neutral-400">
-            {/* {description} */}
+          <p className="mt-2 text-gray-400 dark:text-neutral-400 line-clamp-3">
+            {description}
           </p>
 
           <div className="mt-5 sm:mt-auto"></div>

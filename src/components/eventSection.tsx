@@ -42,8 +42,10 @@ const EventSection: React.FC = () => {
       id: event.id,
       title: event.attributes.name,
       date: event.attributes.date,
-      // description: event.attributes.description,
-      photos: event.attributes.photos?.data.attributes.url,
+      description: event.attributes.description,
+      photo:
+        process.env.NEXT_PUBLIC_BASE_URL +
+        event.attributes.photos?.data[0].attributes.url,
     };
   });
 
