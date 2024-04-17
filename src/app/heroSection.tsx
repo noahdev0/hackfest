@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import React from "react";
+import React, { memo } from "react";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
@@ -95,4 +95,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default memo(HeroSection);
