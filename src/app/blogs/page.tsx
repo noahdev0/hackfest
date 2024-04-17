@@ -1,8 +1,13 @@
 import Container from "@/components/container";
+import Blogs from "@/components/blogs";
 import React from "react";
 
-const Blogs: React.FC = () => {
-  return <Container>Blogs statisc</Container>;
+const Page: React.FC = () => {
+  return (
+    <Container>
+      <Blogs />
+    </Container>
+  );
 };
 
-export default Blogs;
+export default Page;
