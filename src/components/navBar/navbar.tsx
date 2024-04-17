@@ -3,6 +3,7 @@ import Image from "next/image";
 import NavNavigation from "./NavNavigation";
 import Container from "../container";
 import Link from "next/link";
+import { DesktopIcon } from "@radix-ui/react-icons";
 
 const Navbar = async () => {
   return (
