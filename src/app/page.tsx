@@ -8,8 +8,7 @@ const LandingPage: React.FC = () => {
   return (
     <Container>
       <HeroSection />
-
-      <EventSection />
+      <EventSection blogsNumber={4} />
       <Blogs blogsNumber={6} />
     </Container>
   );
